@@ -21,7 +21,7 @@ class PostController extends Controller
         //  ->with('i',(request()->input('page',1) -1 ) *5 );
         // return view('posts');
 
-        $data = Post::first()->paginate(5);
+        $data = Post::orderBy('id','asc')->paginate(5);
         return view('posts.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
