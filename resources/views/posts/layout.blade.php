@@ -40,6 +40,7 @@
                 background-color: #CC0099;
                 color: white;
             } 
+            
             body {
                 /* font-family: "Sofia", sans-serif; */
             }   

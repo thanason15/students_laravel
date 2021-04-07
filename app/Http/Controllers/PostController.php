@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //a
+        
         // $data = Post::latest()->paginate(5);
         // $data = Post::first()->paginate(5);
         //  return view('posts.index', compact('data'))
@@ -43,21 +43,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     //
-    // // dd($request->all());    
-    // $request->validate([
-    //             'title'=>'requirde',
-    //             'description'=>'required'
-    //         ]);
 
-    // Post::create($request->all());
-
-    // return redirect()->route('posts.index')
-    //                 ->with('success','Post created successfully.');
-        
-    // }
     public function store(Request $request)
     {
         //

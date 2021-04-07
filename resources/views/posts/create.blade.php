@@ -29,9 +29,13 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>รหัสนักศึกษา</strong>
-                    <input type="namber" name="main_id" class="form-control" placeholder="Enter Data" required max="10">
+                    <input name="main_id"   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type = "number"
+                    maxlength = "6" class="form-control" placeholder="Enter Data" required>
                 </div>
             </div>
+
+            {{-- <input type="text" oninput="numberOnly(this.id);" class="test_css" maxlength="4" id="flight_number" name="number"/> --}}
 
             <div class="col-md-12">
                 <div class="form-group">
@@ -53,6 +57,13 @@
 
         </div>
     </form>
+    <script>
+
+    // function numberOnly(id) {
+    //     var element = document.getElementById(id);
+    //     element.value = element.value.replace(/[^0-9]/gi, "");
+    // }
+    </script>
 
 
 @endsection
