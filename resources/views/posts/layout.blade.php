@@ -31,8 +31,7 @@
     @yield('js')
     <style>
             table {
-                /* font-family: Arial, Helvetica, sans-serif; */
-                /* font-family: "Sofia", sans-serif; */
+
                 border-collapse: collapse;
                 width: 100%;
             }
@@ -40,22 +39,14 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #CC0099;
+                background-color: #4169E1;
                 color: white;
             } 
             
-            body {
-                /* font-family: "Sofia", sans-serif; */
-            }   
-                
 
          table tr:nth-child(even){background-color: #f2f2f2;}
          table tr:hover {background-color: #ddd;}
 
-         /* table td, table th {
-            border: 1px solid #ddd;
-            padding: 8px;
-            } */
    
     </style>
 </body>

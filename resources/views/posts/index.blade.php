@@ -22,8 +22,8 @@
     @endif
 
 
-    <table id="example" class="table table-striped " style="width:100%">
-        <thead class="table-dark">
+    <table id="student" class="table table-striped " style="width:100%">
+        <thead>
             <tr>
                 <th scope="col" width="5px">ลำดับ</th>
                 <th scope="col" width="100px">รหัสนักศึกษา</th>
@@ -43,7 +43,7 @@
                     <form action="{{ route('posts.destroy',$value->id) }}" method="post">
                         {{-- method คือการส่งข้อมูล เเบบต่างๆ เช่น post --}}
                         {{-- action ใช้ใน form นั้นหรอการกระทำ --}}
-                        <a href="{{ route('posts.show',$value->id) }}" class="btn btn-primary">ดูข้อมูล</a>
+                        <a href="{{ route('posts.show',$value->id) }}" class="btn btn-info">ดูข้อมูล</a>
                         <a href="{{ route('posts.edit',$value->id) }}" class="btn btn-warning">จัดการเกรด</a>
                         @csrf
                      
@@ -83,12 +83,11 @@
         <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
         <script>
-            $(document).ready(function() {
-    $('#example').DataTable();
-} );
+        $(document).ready(function() {
+             $('#student').DataTable({
+             "lengthMenu": [[5,10, 50, -1], [5, 10, 50, "All"]]
+        });
+        } );
         </script>
-    @endsection
-    {{-- {!! $data->links() !!} --}}
-    {{-- links คื่อการใช้ฟังชั่นของ laravel App\Providers\AppServiceProvider  public function boot  Paginator::useBootstrap(); --}}
-    
+    @endsection    
 @endsection
