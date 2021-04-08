@@ -1,4 +1,7 @@
 @extends('posts.layout')
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
+@endsection
 
 @section('content')
     <div class="row mt-5">
@@ -19,14 +22,14 @@
     @endif
 
 
-    <table class="table table-bordered">
+    <table id="example" class="table table-striped " style="width:100%">
         <thead class="table-dark">
             <tr>
-                <th width="5px">ลำดับ</th>
-                <th width="100px">รหัสนักศึกษา</th>
-                <th width="250px">ชื่อ</th>
-                <th width="250px">นามสกุล</th>
-                <th width="250px">ดำเนินการ</th>
+                <th scope="col" width="5px">ลำดับ</th>
+                <th scope="col" width="100px">รหัสนักศึกษา</th>
+                <th scope="col" width="250px">ชื่อ</th>
+                <th scope="col" width="250px">นามสกุล</th>
+                <th scope="col" width="250px">ดำเนินการ</th>
             </tr>
         </thead>
         @foreach ( $data as $key => $value )
@@ -75,7 +78,17 @@
             </tr>     
         @endforeach
     </table>
-    {!! $data->links() !!}
+    @section('js')
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $(document).ready(function() {
+    $('#example').DataTable();
+} );
+        </script>
+    @endsection
+    {{-- {!! $data->links() !!} --}}
     {{-- links คื่อการใช้ฟังชั่นของ laravel App\Providers\AppServiceProvider  public function boot  Paginator::useBootstrap(); --}}
     
 @endsection
